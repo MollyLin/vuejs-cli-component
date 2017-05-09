@@ -21,16 +21,11 @@
         <button class="btn">Sign up</button>
       </div>
     </form>
-    <famous></famous>
   </div>
 </template>
 
 <script>
-  import Famous from './Famous.vue'
   export default {
-    components: {
-      Famous
-    },
     created () {
       console.log('register')
     }

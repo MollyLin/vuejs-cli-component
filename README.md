@@ -1,4 +1,4 @@
-# stories-project
+# vuejs-cli-component
 
 > a Vue.js project
 

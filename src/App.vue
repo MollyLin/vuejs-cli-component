@@ -1,26 +1,28 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
-    <login></login>
-    <register></register>
-    <stories></stories>
+    <div class="container">
+      <div class="col-md-6">
+        <login></login>
+      </div>
+      <div class="col-md-6">
+        <register></register>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Login from './components/Login.vue'
-import Hello from './components/Hello.vue'
 import Register from './components/Register.vue'
-import Stories from './components/Stories.vue'
 
 export default {
   name: 'app',
   components: {
-    Hello,
     Login,
-    Register,
-    Stories
+    Register
   }
 }
 </script>
