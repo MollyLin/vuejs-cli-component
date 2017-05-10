@@ -9,6 +9,7 @@
         <register></register>
       </div>
       <div class="col-md-6">
+        <contact></contact>
       </div>
     </div>
   </div>
@@ -17,12 +18,14 @@
 <script>
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'app',
   components: {
     Login,
-    Register
+    Register,
+    Contact
   }
 }
 </script>
