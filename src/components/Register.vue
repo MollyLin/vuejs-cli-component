@@ -1,6 +1,7 @@
 <template>
   <div id="register">
     <h2>註冊</h2>
+    <hr>
     <form>
       <div class="form-group">
         <input type="text" placeholder="請輸入身份證號碼 例:A123456789"   maxlength='10'  title="請填入正確身份證字號" pattern="[A-Z]{9}" autofocus  v-model="sign.sid" required />

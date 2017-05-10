@@ -1,6 +1,7 @@
 <template>
 	<div id="login">
 		<h2>登入</h2>
+		<hr>
 			<form>
 				<div class="form-group">
 					<input type = "text" placeholder = "請輸入身份證號碼" maxlength='10' pattern="[A-Z]{9}" required v-model="user.sid">

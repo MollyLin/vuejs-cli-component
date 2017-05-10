@@ -1,6 +1,7 @@
 <template lang="jade">
   div#contact
     h2 聯絡資訊
+    hr
     form
       div.form-group
         input(type="text" placeholder="請輸入您的暱稱" v-model="user.nick")
@@ -29,7 +30,7 @@
                 li 依據個人資料保護法，參加本活動者視為瞭解及同意美商3M台灣子公司本於網路省水活動妙招募集及抽獎活動之需要進行蒐集、處理及利用其個人資料(包括電話、e-mail等資訊。具體項目詳如本活動參與頁面及活動辦法內所列事項。) 參加者如欲閱覽、變更、刪除個資或要求美商3M台灣子公司停止蒐集、處理及利用個人資料，請通知美商3M台灣子公司要求辦理。
                 li 蒐集個人資料公司: 美商3M台灣子公司及受其委託從事郵寄、運送、活動舉辦、執行研究調查第之第三人。
       div.form-group
-        button.btn.btn-primary(type="submit") 登入
+        button.btn.btn-primary(type="submit") 送出
 </template>
 
 <script>
