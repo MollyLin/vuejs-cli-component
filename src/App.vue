@@ -11,6 +11,9 @@
       <div class="col-md-6">
         <contact></contact>
       </div>
+      <div class="col-md-6">
+        <resize></resize>
+      </div>
     </div>
   </div>
 </template>
@@ -19,13 +22,15 @@
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
 import Contact from './components/Contact.vue'
+import Resize from './components/Resize_image.vue'
 
 export default {
   name: 'app',
   components: {
     Login,
     Register,
-    Contact
+    Contact,
+    Resize
   }
 }
 </script>
