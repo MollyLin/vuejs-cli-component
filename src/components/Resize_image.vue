@@ -16,6 +16,7 @@
 
 <script>
   import $ from 'jquery'
+  import guillotine from 'guillotine'
   $(document).ready(function() {
     jQuery(function() {
       var $preview = $('#js_img-preview');
