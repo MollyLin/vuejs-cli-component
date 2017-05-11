@@ -3,16 +3,15 @@
     h2 Image Upload Preview
     hr
     form
-      input#js_input-upload(type="file" accept=".png,.jpg,.jpeg" v-on:change="input_onFileChange" v-show="!imgSrc")
-      img#js_img-preview(v-bind:src="imgSrc" v-show="imgSrc")
+      div.upload__box
+        img#js_img-preview(v-bind:src="imgSrc" v-show="imgSrc")
+        input#js_input-upload(type="file" accept=".png,.jpg,.jpeg" v-on:change="input_onFileChange" v-show="!imgSrc")
       div(v-show="imgSrc")
         a#js_up.btn.btn-default(href="javascript:void(0);") 上
         a#js_down.btn.btn-default(href="javascript:void(0);") 下
         a#js_left.btn.btn-default(href="javascript:void(0);") 左
         a#js_right.btn.btn-default(href="javascript:void(0);") 右
 </template>
-
-
 
 <script>
   import $ from 'jquery'
@@ -110,3 +109,13 @@
     }
   }
 </script>
+
+<style lang="sass" scoped>
+  .upload__box
+    width: 400px
+    height: 400px
+    background-color: #dadada
+    position: relative
+    overflow: hidden
+    margin: 0 10px 10px 10px
+</style>
