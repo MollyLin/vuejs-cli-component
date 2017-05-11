@@ -15,6 +15,7 @@
 
 
 <script>
+  import $ from 'jquery'
   $(document).ready(function() {
     jQuery(function() {
       var $preview = $('#js_img-preview');
