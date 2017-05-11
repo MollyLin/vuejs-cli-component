@@ -23,6 +23,7 @@ import Login from './components/Login.vue'
 import Register from './components/Register.vue'
 import Contact from './components/Contact.vue'
 import Resize from './components/Resize_image.vue'
+import Model from './components/Model.vue'
 
 export default {
   name: 'app',
@@ -30,7 +31,8 @@ export default {
     Login,
     Register,
     Contact,
-    Resize
+    Resize,
+    Model
   }
 }
 </script>
