@@ -11,19 +11,29 @@
         a#js_down.btn.btn-default(href="javascript:void(0);") 下
         a#js_left.btn.btn-default(href="javascript:void(0);") 左
         a#js_right.btn.btn-default(href="javascript:void(0);") 右
+        a#js_rotate.btn.btn-default(href="javascript:void(0);") 旋轉
+        a.input_upload-re.btn.btn-default(href="javascript:void(0);") 重傳
+        input#js_upload-re(type="file" accept=".png,.jpg,.jpeg" v-on:change="input_onFileChange" v-show="input_hide")
+        a#js_zoom-in.btn.btn-default(href="javascript:void(0);") ZoomIn
+        a#js_zoom-out.btn.btn-default(href="javascript:void(0);") ZoomOut
+        a#js_fit.btn.btn-default(href="javascript:void(0);") Fit
 </template>
 
 <script>
   import $ from 'jquery'
   import guillotine from 'guillotine'
+
   $(document).ready(function() {
+    $('.input_upload-re').click(function() {
+        $('#js_upload-re').trigger("click");
+    });
     jQuery(function() {
       var $preview = $('#js_img-preview');
       $preview.on('load', function() {
           $preview.guillotine("remove");
           $preview.guillotine({
-              width: 300,
-              height: 300
+              width: 400,
+              height: 400
           });
           $preview.guillotine('fit');
           for (var i = 0; i < 5; i++) {
@@ -33,42 +43,37 @@
           for (var key in data) {
               $('#' + key).html(data[key]);
           }
-
           $('#js_up').click(function() {
-              console.log('upup');
-              $preview.guillotine('move', {
-                  y: -30
-              });
-          });
-          $('#js_down').click(function() {
               $preview.guillotine('move', {
                   y: 30
               });
           });
-          $('#js_left').click(function() {
+          $('#js_down').click(function() {
               $preview.guillotine('move', {
-                  x: -30
+                  y: -30
               });
           });
-          $('#js_right').click(function() {
+          $('#js_left').click(function() {
               $preview.guillotine('move', {
                   x: 30
               });
           });
+          $('#js_right').click(function() {
+              $preview.guillotine('move', {
+                  x: -30
+              });
+          });
 
-          $('#turnRight').click(function() {
+          $('#js_rotate').click(function() {
               $preview.guillotine('rotateRight');
           });
-          $('#turnLeft').click(function() {
-              $preview.guillotine('rotateLeft');
-          });
-          $('#zoomIn').click(function() {
+          $('#js_zoom-in').click(function() {
               $preview.guillotine('zoomIn');
           });
-          $('#zoomOut').click(function() {
+          $('#js_zoom-out').click(function() {
               $preview.guillotine('zoomOut');
           });
-          $('#reset').click(function() {
+          $('#js_fit').click(function() {
               $preview.guillotine('fit');
           });
           $preview.on('guillotinechange', function(ev, data, action) {
@@ -88,7 +93,8 @@
 		},
     data () {
       return {
-        imgSrc: ''
+        imgSrc: '',
+        input_hide: false
       }
     },
     methods:{
@@ -110,12 +116,14 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .upload__box
-    width: 400px
-    height: 400px
-    background-color: #dadada
-    position: relative
-    overflow: hidden
-    margin: 0 10px 10px 10px
+<style lang="scss" scoped>
+  @import '~guillotine/css/jquery.guillotine.css';
+  .upload__box {
+    width: 400px;
+    height: 400px;
+    background-color: #dadada;
+    position: relative;
+    overflow: hidden;
+    margin: 0 10px 10px 10px;
+  }
 </style>
